@@ -6,6 +6,6 @@ from flask import Blueprint
 api = Blueprint("demo", __name__)
 
 
-@api.route("/", methods=["GET", "POST"])
+@api.route("/hello", methods=["GET", "POST"])
 def home():
     return "Hello World!"
