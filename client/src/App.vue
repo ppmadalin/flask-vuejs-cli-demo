@@ -1,20 +1,48 @@
 <template>
   <div id="app">
     <Navigation />
-    <Content />
+    <AddTodo v-on:add-todo="addTodo"/>
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
   </div>
 </template>
 
 <script>
 import Navigation from "./components/layout/Navigation.vue";
-import Content from "./components/layout/Content.vue";
+import AddTodo from "./components/AddTodo.vue";
+import Todos from "./components/Todos.vue";
 
 export default {
   name: "App",
   components: {
     Navigation,
-    Content
+    AddTodo,
+    Todos
   },
+  data() {
+    return {
+      todos: [
+        {
+          id: 1,
+          title: "My first task",
+          completed: false
+        },
+        {
+          id: 2,
+          title: "My second task",
+          completed: true
+        }
+
+      ]
+    }
+  },
+  methods: {
+    deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id)
+    },
+    addTodo(newTodo){
+      this.todos = [...this.todos, newTodo];
+    }
+  }
 };
 </script>
 
