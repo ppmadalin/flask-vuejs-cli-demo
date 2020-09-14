@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-def create_app(env = "DEV"):
+def create_app(env="DEV"):
     """ Application Factory """
 
     app = Flask(__name__)

@@ -4,7 +4,6 @@ from flask.globals import current_app
 from server.flask_app import db
 
 
-
 class Task(db.Model):
     """ Simple task model. """
 
