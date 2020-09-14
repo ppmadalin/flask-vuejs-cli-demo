@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 flask = "*"
 pytest = "*"
+black = "*"
+sqlalchemy = "*"
 
 [requires]
 python_version = "3.8"
