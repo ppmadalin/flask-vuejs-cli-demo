@@ -14,7 +14,7 @@ class ProductionConfig(Config):
     DB_USERNAME = os.environ.get("DB_USER")
     DB_PASSWORD = os.environ.get("DB_PASSWORD")
     DB_HOST = os.environ.get("DB_HOST")
-    DATABASE_NAME = "tasks"
+    DATABASE_NAME = os.environ.get("DATABASE_NAME")
     # mysql://username:password@server/db
     DB_URI = (
         f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:3306/{DATABASE_NAME}"
