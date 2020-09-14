@@ -1,6 +1,7 @@
 # coding: utf-8
 
 import pathlib
+import os
 
 
 class Config:
@@ -10,17 +11,16 @@ class Config:
 
 
 class ProductionConfig(Config):
-    DB_USERNAME = ""
-    DB_PASSWORD = ""
-    DB_HOST = ""
-    DATABASE_NAME = ""
+    DB_USERNAME = os.environ.get("DB_USER")
+    DB_PASSWORD = os.environ.get("DB_PASSWORD")
+    DB_HOST = os.environ.get("DB_HOST")
+    DATABASE_NAME = "tasks"
     # mysql://username:password@server/db
     DB_URI = (
         f"mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:3306/{DATABASE_NAME}"
     )
     SQLALCHEMY_DATABASE_URI = DB_URI
     SQLALCHEMY_TRACK_MODIFICATIONS = True
-    MYSQL_ROOT_PASSWORD = ""
 
 
 class DevelopmentConfig(Config):
