@@ -16,7 +16,7 @@ def create_app(env="DEV"):
         app.config.from_object("server.config.DevelopmentConfig")
     elif env == "TEST":
         app.config.from_object("server.config.TestingConfig")
-    else:
+    elif env == "PROD":
         app.config.from_object("server.config.ProductionConfig")
 
     # init apps
