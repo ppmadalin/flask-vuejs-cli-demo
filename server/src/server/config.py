@@ -33,6 +33,7 @@ class DevelopmentConfig(Config):
     DB_URI = f"sqlite:///{DATABASE}"
     SQLALCHEMY_DATABASE_URI = DB_URI
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    TEST = os.environ["TEST"]
 
 
 class TestingConfig(Config):

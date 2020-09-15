@@ -3,7 +3,7 @@
 from server.flask_app import create_app
 from server.manage import init_db
 
-app = create_app(env="PROD")
+app = create_app(env="DEV")
 
 app.cli.add_command(init_db)
 
